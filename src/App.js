@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import PersonalInfo from "./components/Personal-Info";
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const initialFormValues = {
+    fLName: "",
+    email: "",
+    phoneNumber: "",
+  };
+
+  const initialFormErrors = {
+    fLname: "",
+    email: "",
+    phoneNumber: "",
+  };
+
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [errors, setErrors] = useState(initialFormErrors);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Multi-Step-Form</h1>
+      <PersonalInfo />
     </div>
   );
 }
